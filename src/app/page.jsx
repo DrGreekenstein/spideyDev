@@ -1,5 +1,6 @@
 "use client";
 
+import ContactForm from "@/components/contactForm";
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
 
@@ -132,6 +133,7 @@ export default function Home() {
           {/* purchase cards */}
           <motion.div
             className="flex justify-center items-center mt-20 gap-10"
+            id="pricing"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -387,6 +389,8 @@ export default function Home() {
           </motion.div>
 
           <hr className="my-10 mt-20" />
+
+          <ContactForm/>
 
           {/* footer */}
           <div className="flex justify-center items-center mt-20 pb-10">
