@@ -1,11 +1,11 @@
 // app/api/create-user/route.js
-import { currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import connectDB from "../../../lib/connectDB.js";
 import { User } from "../../../lib/user_Schema.js"; // Your mongoose model
 
 export async function POST() {
   try {
-    const user = await currentUser();
+    const user = await auth();
 
     if (!user) {
       return new Response("Unauthorized", { status: 401 });
