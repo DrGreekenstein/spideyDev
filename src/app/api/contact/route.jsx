@@ -1,5 +1,5 @@
-import connectDB from '@/libs/connectDB';
-import Contact from '@/libs/contact_Schema'
+import connectDB from '../../../libs/connectDB';
+import Contact from '../../../libs/contact_Schema'
 import { NextResponse } from 'next/server'
 
 export async function POST(req) {
