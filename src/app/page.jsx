@@ -260,7 +260,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-6">
-                  <Link href="https://buy.stripe.com/test_eVq7sK0Oo8EybTGfxBeQM00" className="btn btn-primary btn-block">
+                  <Link target="_blank" href="https://buy.stripe.com/test_eVq7sK0Oo8EybTGfxBeQM00" className="btn btn-primary btn-block">
                     Subscribe
                   </Link>
                 </div>
@@ -386,7 +386,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-6">
-                  <Link href="https://buy.stripe.com/test_3cIdR8aoY8Ey9Ly1GLeQM01" className="btn btn-primary btn-block">
+                  <Link target="_blank" href="https://buy.stripe.com/test_3cIdR8aoY8Ey9Ly1GLeQM01" className="btn btn-primary btn-block">
                     Subscribe
                   </Link>
                 </div>
