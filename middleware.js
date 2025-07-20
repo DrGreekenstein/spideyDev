@@ -1,12 +1,21 @@
-import { clerkMiddleware } from '@clerk/nextjs/server';
 
-export default clerkMiddleware();
+import { authMiddleware } from "@clerk/nextjs";
+import { NextResponse } from "next/server";
+
+export default authMiddleware({
+  async afterAuth(auth, req) {
+    const plan = auth?.user?.publicMetadata?.plan || 'basic';
+    const url = req.nextUrl;
+
+    if (url.pathname.startsWith('/pro-feature') && plan !== 'pro') {
+      url.pathname = '/upgrade';
+      return NextResponse.redirect(url);
+    }
+
+    return NextResponse.next();
+  },
+});
 
 export const config = {
-  matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    // Always run for API routes
-    '/(api|trpc)(.*)',
-  ],
+  matcher: ["/((?!_next|favicon.ico).*)"],
 };

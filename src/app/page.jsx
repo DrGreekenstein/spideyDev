@@ -4,6 +4,7 @@ import ContactForm from "../components/contactForm";
 import NavBar from "../components/navbar";
 import { SignedOut } from "@clerk/nextjs";
 import { useScroll, useTransform, motion } from "motion/react";
+import Link from "next/link";
 import { useRef } from "react";
 
 export default function Home() {
@@ -259,9 +260,9 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-6">
-                  <button className="btn btn-primary btn-block">
+                  <Link href="https://buy.stripe.com/test_eVq7sK0Oo8EybTGfxBeQM00" className="btn btn-primary btn-block">
                     Subscribe
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -385,9 +386,9 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-6">
-                  <button className="btn btn-primary btn-block">
+                  <Link href="https://buy.stripe.com/test_3cIdR8aoY8Ey9Ly1GLeQM01" className="btn btn-primary btn-block">
                     Subscribe
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
