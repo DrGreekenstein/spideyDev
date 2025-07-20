@@ -53,7 +53,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4 font-inter">
+    <div id='contact' className="min-h-screen bg-gray-900 flex items-center justify-center p-4 font-inter">
       <div className="bg-gray-800 rounded-2xl shadow-lg flex flex-col lg:flex-row w-full max-w-6xl overflow-hidden">
         <div className="lg:w-1/2 p-8 lg:p-16 bg-gray-900 text-white flex flex-col justify-center rounded-l-2xl">
           <h2 className="text-4xl font-bold mb-6 text-white">Get in touch</h2>

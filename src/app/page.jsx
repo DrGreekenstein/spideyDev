@@ -1,11 +1,14 @@
 "use client";
 
-import ContactForm from "@/components/contactForm";
+import ContactForm from "../components/contactForm";
+import NavBar from "../components/navbar";
+import { SignedOut } from "@clerk/nextjs";
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
 
 export default function Home() {
   const containerRef = useRef(null);
+  let isSignedIn=true;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -16,6 +19,7 @@ export default function Home() {
 
   return (
     <div ref={containerRef}>
+      <NavBar isSignedIn={isSignedIn} />
       {/* BG vid */}
       <video
         className="fixed top-0 left-0 w-full h-full object-cover -z-20"
@@ -131,7 +135,8 @@ export default function Home() {
           <hr className="my-10 mt-20" />
 
           {/* purchase cards */}
-          <motion.div
+          <SignedOut>
+            <motion.div
             className="flex justify-center items-center mt-20 gap-10"
             id="pricing"
             initial={{ opacity: 0, y: 100 }}
@@ -387,13 +392,13 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-
           <hr className="my-10 mt-20" />
+          </SignedOut>
 
           <ContactForm/>
 
           {/* footer */}
-          <div className="flex justify-center items-center mt-20 pb-10">
+          <div className="flex justify-center items-center py-10">
             <p className="text-sm text-white">
               &copy; 2025 SpideyDev. All rights reserved.
             </p>
