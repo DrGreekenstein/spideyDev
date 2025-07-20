@@ -1,8 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema({
-  email: String,
+  clerkId: { type: String, required: true, unique: true },
+  email: { type: String, required: true },
   plan: { type: String, default: "none" },
+  stripeCustomerId: { type: String },
+  stripeSubscriptionId: { type: String },
   paymentHistory: [
     {
       date: Date,
@@ -10,6 +13,6 @@ const userSchema = new Schema({
       stripeSessionId: String,
     },
   ],
-});
+}, { timestamps: true });
 
 export default mongoose.models.User || mongoose.model("User", userSchema);
