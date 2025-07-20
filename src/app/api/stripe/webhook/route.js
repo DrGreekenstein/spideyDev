@@ -1,8 +1,8 @@
 import { buffer } from 'micro';
 import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
-import connectDB from '../../../../lib/connectDB';
-import User from '../../../../lib/user_Schema';
+import connectDB from '../../../../lib/connectDB.js';
+import User from '../../../../lib/user_Schema.js';
 import { clerkClient } from '@clerk/nextjs';
 
 export const config = {

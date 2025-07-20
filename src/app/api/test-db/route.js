@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import connectDB from '../../../lib/connectDB';
-import User from '../../../lib/user_Schema';
+import connectDB from '../../../lib/connectDB.js';
+import User from '../../../lib/user_Schema.js';
 import { auth } from '@clerk/nextjs/server';
 import mongoose from 'mongoose';
 

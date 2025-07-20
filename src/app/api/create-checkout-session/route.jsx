@@ -2,8 +2,8 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { auth } from '@clerk/nextjs/server';
-import connectDB from '../../../lib/connectDB';
-import User from '../../../lib/user_Schema';
+import connectDB from '../../../lib/connectDB.js';
+import User from '../../../lib/user_Schema.js';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2025-06-30.basil',
